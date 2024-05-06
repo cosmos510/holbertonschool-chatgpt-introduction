@@ -2,10 +2,10 @@
 import sys
 """
     Calculate the factorial of a given non-negative integer using recursion.
-    
+
     Parameters:
     - n (int): A non-negative integer for which to calculate the factorial.
-    
+
     Returns:
     - int: The factorial of the given number.
 """
