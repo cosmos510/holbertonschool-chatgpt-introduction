@@ -1,13 +1,9 @@
 #!/usr/bin/python3
 import sys
 """
-    Calculate the factorial of a given non-negative integer using recursion.
-
-    Parameters:
-    - n (int): A non-negative integer for which to calculate the factorial.
-
-    Returns:
-    - int: The factorial of the given number.
+factorial - Calculate the factorial of a given non-negative integer using recursion.
+ @n: A non-negative integer for which to calculate the factorial.
+ Returns: The factorial of the given number.
 """
 def factorial(n):
     if n == 0:
