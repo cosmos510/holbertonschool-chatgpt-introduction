@@ -52,20 +52,35 @@ class Minesweeper:
 		return True
 	
 	def check_win(self):
+		# Calculate the total number of non-mine cells
 		non_mine_count = self.width * self.height - len(self.mines)
+		
+		# Count the number of revealed cells
 		revealed_count = sum(sum(row) for row in self.revealed)
+		
+		# If all non-mine cells are revealed, it's a win
 		return revealed_count == non_mine_count
 
 	def play(self):
 		while True:
 			self.print_board()
 			try:
+				# Get the user's input for coordinates
 				x = int(input("Enter x coordinate: "))
 				y = int(input("Enter y coordinate: "))
+				
+				# If the player hits a mine, game over
 				if not self.reveal(x, y):
 					self.print_board(reveal=True)
 					print("Game Over! You hit a mine.")
 					break
+				
+				# Check if the player has won
+				elif self.check_win():
+					self.print_board()
+					print("Congratulations! You revealed all non-mine cells. You win!")
+					break
+			
 			except ValueError:
 				print("Invalid input. Please enter numbers only.")
 
